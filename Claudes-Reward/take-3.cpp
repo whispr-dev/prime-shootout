@@ -1,0 +1,2 @@
+#include<bits/stdc++.h>
+using u=uint64_t;int main(){u n=5e5,h=n/2,i=1,j,w,p;std::vector<u>b(h/64+1,~0ULL),r{2};for(b[0]^=1;i*i<=h;++i)if(b[i/64]>>i%64&1)for(j=2*i*-~i;j<=h;j+=i*2+1)b[j/64]&=~(1ULL<<j%64);for(i=0;i<b.size();++i)for(w=b[i];w;w&=w-1)if(p=(i*64+__builtin_ctzll(w))*2+1,p<=n)r.push_back(p);std::cout<<r.size();}
